@@ -11,15 +11,44 @@
      <!--/Vue cdn-->
     <!--/Style-->
     <!--Font Awesome cdn-->
-    <link rel="stylesheet" href="">
-    <!--Font Awesome cdn-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <!--/Font Awesome cdn-->
     <title>Document</title>
 </head>
 <body>
+
+    <div id="app">
+
+        <section class="slider">
+            <div class="prev" @click="prevPhoto">
+                <div class="fas fa-arrow-left"></div>
+            </div>
+
+            <div class="images">
+                <img v-bind:src="photos[indexPhoto]" alt="">
+            
+            </div>
+
+            <div class="next" @click="nextPhoto" > <!--Kind of event listener--> 
+                <div class="fas fa-arrow-right"></div>
+            </div>
+
+            <div class="nav">
+                <i class="fas fa-circle active first"></i>
+                    <i class="fas fa-circle"></i>
+                    <i class="fas fa-circle"></i>
+                    <i class="fas fa-circle last"></i>
+            </div>
+
+        </section>
+    </div>
+
+
     
 
 
-
+        <!--Script 
+                    JS-->
     <script src="./script/main.js"></script>
 </body>
 </html>
