@@ -13,13 +13,15 @@
     <!--Font Awesome cdn-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <!--/Font Awesome cdn-->
-    <title>Document</title>
+    <title>Vue Slider</title>
 </head>
 <body>
 
     <div id="app">
 
-        <section class="slider">
+        <section class="slider"
+            @mouseenter="stopLoop"
+        >
             <div class="prev" @click="prevPhoto">
                 <div class="fas fa-arrow-left"></div>
             </div>
@@ -34,11 +36,17 @@
             </div>
 
             <div class="nav">
-                <i class="fas fa-circle active first"></i>
-                    <i class="fas fa-circle"></i>
-                    <i class="fas fa-circle"></i>
-                    <i class="fas fa-circle last"></i>
-            </div>
+              <!--  <i class="fas fa-circle active first"></i>
+                <i class="fas fa-circle"></i>
+                <i class="fas fa-circle"></i>
+                <i class="fas fa-circle last"></i> -->
+
+                <i v-for="(photo, index) in photos"
+                   class="fas fa-circle"
+                   v-bind:class="{ active: index == indexPhoto}"
+                   @click="setPhoto(index)"
+                ></i>
+        </div>
 
         </section>
     </div>
